@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'spring-boot'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-thymeleaf"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+}
+
+springBoot{
+
+    mainClass="org.mael.spring.boot.web.Main"
+
+}
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.0.+"
+    }
+}
