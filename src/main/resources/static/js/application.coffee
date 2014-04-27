@@ -1,13 +1,26 @@
 require.config {
-  paths : {
-    jquery: '//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min',
-    ember: '/js/bower_components/ember/ember.js'
+  paths: {
+    jquery: '/js/bower_components/jquery/dist/jquery',
+    handlebars: '/js/bower_components/handlebars/handlebars',
+    ember: '/js/bower_components/ember/ember'
   },
   waitSeconds: 15
 }
 
 
-require ['jquery'], (jquery, ember) ->
-  $(document).ready ->
-    $('p').on 'click', ->
-      $(this).text "gatin!"
+require ['jquery', 'handlebars', 'ember'], (app) ->
+
+  App = Ember.Application.create({
+    VERSION: '0.0.1',
+    LOG_TRANSITIONS: true
+  })
+
+  App.ApplicationController = Ember.Controller.extend {
+    'applicationTitle': 'Codex Arcana'
+  }
+
+  App.IndexController = Ember.Controller.extend {
+    'hello': 'Codex Arcana'
+  }
+
+  return

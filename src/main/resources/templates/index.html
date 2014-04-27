@@ -4,12 +4,21 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="fragments/layout">
 <body>
-
-<h1>Hello, World!</h1>
-
 <div layout:fragment="page-content" th:remove="tag">
-    <p th:text="#{hello}">Hello</p>
-    <script src="/js/application.js"></script>
+    <script type="text/x-handlebars" data-template-name="application">
+    <header class="main-header">
+        <h1>{{applicationTitle}}</h1>
+    </header>
+    <div class="content">
+        {{outlet}}
+    </div>
+    <footer class="main-footer">
+        CopyLefts: {{applicationTitle}}
+    </footer>
+    </script>
+    <script type="text/x-handlebars" data-template-name="index">
+        {{hello}}
+    </script>
 </div>
 </body>
 </html>
