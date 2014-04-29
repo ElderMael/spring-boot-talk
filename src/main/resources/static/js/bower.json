@@ -1,5 +1,5 @@
 {
-    "name": "your-app",
+    "name": "codex-arcana",
     "dependencies": {
 	"requirejs": "latest",
         "jquery": "~2.1.0",

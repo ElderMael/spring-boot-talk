@@ -6,3 +6,4 @@ src/main/resources/static/js/coffee/
 node_modules/
 src/main/resources/static/js/bower_components/
 src/main/resources/static/js/application.js
+*.css

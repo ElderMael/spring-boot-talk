@@ -6,18 +6,35 @@
 <body>
 <div layout:fragment="page-content" th:remove="tag">
     <script type="text/x-handlebars" data-template-name="application">
-    <header class="main-header">
-        <h1>{{applicationTitle}}</h1>
+     <header clas="site-head">
+        <div class="vertical">
+            <div class="site-head-content inner">
+                <h1 class="blog-title">{{blogTitle}}</h1>
+                <h2 class="blog-description">{{blogDescription}}</h2>
+            </div>
+        </div>
     </header>
-    <div class="content">
-        {{outlet}}
-    </div>
-    <footer class="main-footer">
-        CopyLefts: {{applicationTitle}}
+    <main class="content">
+        {{#foreach}}
+            <article class="post-preview">
+                {{title}} at {{date}}
+            </article>
+        {{/foreach}}
+        <nav class="pagination">
+
+        </nav>
+    </main>
+    <footer class="site-footer">
+        <div class="inner">
+            <section class="copyright">
+
+            </section>
+            <section class="powered-by">
+
+            </section>
+        </div>
     </footer>
-    </script>
-    <script type="text/x-handlebars" data-template-name="index">
-        {{hello}}
+
     </script>
 </div>
 </body>
